@@ -1,28 +1,17 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@tanstack/react-query';
 import { useParams, Link } from 'react-router-dom';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
-
-const GET_POST = gql`
-  query GetPost($slug: ID!) {
-    post(id: $slug, idType: SLUG) {
-      title
-      content
-      date
-      author {
-        node {
-          name
-        }
-      }
-    }
-  }
-`;
+import { fetchGraphQL, GET_POST_QUERY } from '@/lib/wordpress';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { loading, error, data } = useQuery(GET_POST, {
-    variables: { slug },
+  
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['post', slug],
+    queryFn: () => fetchGraphQL(GET_POST_QUERY, { slug }),
+    enabled: !!slug,
   });
 
   return (
@@ -57,7 +46,7 @@ const BlogPost = () => {
               </Button>
             </Link>
 
-            {loading && (
+            {isLoading && (
               <div className="space-y-4">
                 <Skeleton className="h-12 w-3/4" />
                 <div className="flex gap-4">
@@ -70,12 +59,12 @@ const BlogPost = () => {
 
             {error && (
               <div className="text-center py-12">
-                <p className="text-destructive">Error loading post: {error.message}</p>
+                <p className="text-destructive">Error loading post: {(error as Error).message}</p>
               </div>
             )}
 
             {data?.post && (
-              <article className="prose prose-lg max-w-none">
+              <article className="prose prose-lg max-w-none dark:prose-invert">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">{data.post.title}</h1>
                 
                 <div className="flex flex-wrap gap-4 text-muted-foreground mb-8 not-prose">

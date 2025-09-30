@@ -1,24 +1,15 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Calendar } from 'lucide-react';
-
-const GET_POSTS = gql`
-  query GetPosts {
-    posts(first: 100) {
-      nodes {
-        title
-        slug
-        excerpt
-        date
-      }
-    }
-  }
-`;
+import { fetchGraphQL, GET_POSTS_QUERY } from '@/lib/wordpress';
 
 const Blog = () => {
-  const { loading, error, data } = useQuery(GET_POSTS);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['posts'],
+    queryFn: () => fetchGraphQL(GET_POSTS_QUERY),
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -52,7 +43,7 @@ const Blog = () => {
               </p>
             </div>
 
-            {loading && (
+            {isLoading && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
                   <Card key={i}>
@@ -70,11 +61,11 @@ const Blog = () => {
 
             {error && (
               <div className="text-center py-12">
-                <p className="text-destructive">Error loading posts: {error.message}</p>
+                <p className="text-destructive">Error loading posts: {(error as Error).message}</p>
               </div>
             )}
 
-            {data && (
+            {data?.posts && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {data.posts.nodes.map((post: any) => (
                   <Link key={post.slug} to={`/blog/${post.slug}`}>
