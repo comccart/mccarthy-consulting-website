@@ -572,7 +572,7 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Zap className="w-6 h-6 text-primary" />
-                <div className="text-xl font-bold text-foreground">Zoi Labs</div>
+                <div className="text-xl font-bold text-foreground">McCarthy Solutions</div>
               </div>
               <p className="text-muted-foreground text-sm">
                 AI consultancy for professional training companies. London-based, globally trusted.
