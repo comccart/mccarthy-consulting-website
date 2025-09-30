@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -141,6 +142,7 @@ const Index = () => {
               <a href="#process" className="text-foreground hover:text-accent transition-colors">Process</a>
               <a href="#results" className="text-foreground hover:text-accent transition-colors">Results</a>
               <a href="#testimonials" className="text-foreground hover:text-accent transition-colors">Testimonials</a>
+              <Link to="/blog" className="text-foreground hover:text-accent transition-colors">Blog</Link>
             </div>
 
             <Button variant="default" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg">
