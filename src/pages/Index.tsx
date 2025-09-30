@@ -505,7 +505,7 @@ const Index = () => {
               Common Questions Answered
             </h2>
             <p className="text-xl text-muted-foreground">
-              Everything you need to know about working with Zoi Labs
+              Everything you need to know about working with McCarthy Solutions.
             </p>
           </div>
 
