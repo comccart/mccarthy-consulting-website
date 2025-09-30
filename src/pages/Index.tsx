@@ -133,7 +133,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Zap className="w-6 h-6 text-primary" />
-              <div className="text-2xl font-bold text-foreground">Zoi Labs</div>
+              <div className="text-2xl font-bold text-foreground">McCarthy Solutions</div>
             </div>
             
             <div className="hidden md:flex items-center gap-8">
