@@ -87,7 +87,7 @@ const Index = () => {
 
   const testimonials = [
     {
-      quote: "Zoi Labs transformed how we deliver training. Their AI solutions allowed us to scale from 100 to 1,000 students without adding staff.",
+      quote: "McCarthy Solutions transformed how we deliver training. Their AI solutions allowed us to scale from 100 to 1,000 students without adding staff.",
       author: "Sarah Mitchell",
       role: "CEO, Learning Innovations",
       rating: 5
@@ -99,7 +99,7 @@ const Index = () => {
       rating: 5
     },
     {
-      quote: "Working with Zoi Labs was seamless. They understood our challenges and delivered solutions that exceeded our expectations.",
+      quote: "Working with McCarthy Solutions was seamless. They understood our challenges and delivered solutions that exceeded our expectations.",
       author: "Emma Thompson",
       role: "Founder, Skills Academy",
       rating: 5
