@@ -40,11 +40,11 @@ const Index = () => {
               <img src="https://logo.clearbit.com/clutch.co" alt="Clutch" className="h-8" />
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
             </div>
-            <Badge variant="secondary" className="text-sm">IWAI Certified</Badge>
+            <Badge variant="default" className="text-sm">IWAI Certified</Badge>
           </div>
 
           {/* Hero Text */}
@@ -97,7 +97,7 @@ const Index = () => {
       <section id="services" className="py-20 px-6 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4">The Challenge</Badge>
+            <Badge variant="default" className="mb-4">The Challenge</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               The Problem Isn't Your Expertise.
             </h2>
