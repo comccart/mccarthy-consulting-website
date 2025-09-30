@@ -184,7 +184,7 @@ const Index = () => {
           </h1>
 
           <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-8">
-            Dubli-based AI consultancy building intelligent automation and learning systems for professionals. 
+            Dublin-based AI consultancy building intelligent automation and learning systems for professionals. 
             Achieve scalable growth without increasing headcount.
           </p>
 
