@@ -575,7 +575,7 @@ const Index = () => {
                 <div className="text-xl font-bold text-foreground">McCarthy Solutions</div>
               </div>
               <p className="text-muted-foreground text-sm">
-                AI consultancy for professional training companies. London-based, globally trusted.
+                AI consultancy for professionals. Dublin-based, globally trusted.
               </p>
             </div>
             <div>
@@ -606,7 +606,7 @@ const Index = () => {
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 McCarthy Solutions. All rights reserved. Built with ⚡ in London.
+            © 2025 McCarthy Solutions. All rights reserved. Built with ⚡ in Dublin.
           </div>
         </div>
       </footer>
